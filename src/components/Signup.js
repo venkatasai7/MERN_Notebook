@@ -7,11 +7,12 @@ function Signup(props) {
   let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    if((credentials.password===credentials.cpassword))
+    const {name,email,password,cpassword} = credentials;
+    if((password===cpassword))
     {
       e.preventDefault();
       const url = `http://localhost:5001/api/auth/createuser`;
-      const {name,email,password,cpassword} = credentials;
+      //const {name,email,password,cpassword} = credentials;
   
       const response = await fetch(url, {
           method: "POST",
