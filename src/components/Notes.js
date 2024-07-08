@@ -8,7 +8,14 @@ const Notes = (props) => {
     const context = useContext(NoteContext);
     const { notes, getallnodes,editNote } = context;
     let navigate = useNavigate();
-
+    const handleClick=(e)=>{
+        //console.log("updating the note...",note)
+        editNote(note.id, note.etitle,note.edescription,note.etag)
+        refClose.current.click();
+        props.showAlert("updated successfully","success");
+     
+    }
+    
     useEffect(() => {
         if(localStorage.getItem('token'))
          {   
@@ -20,7 +27,7 @@ const Notes = (props) => {
             navigate("/login");
          }
         
-    }, []);
+    }, [handleClick]);
     const ref = useRef(null)
     const refClose = useRef(null)
     const [note,setnote]=  useState({id:"",etitle:"",edescription:"",etag:""})
@@ -38,13 +45,7 @@ const Notes = (props) => {
 
     }
 
-    const handleClick=(e)=>{
-        //console.log("updating the note...",note)
-        editNote(note.id, note.etitle,note.edescription,note.etag)
-        refClose.current.click();
-        props.showAlert("updated successfully","success");
-     
-    }
+
 
     const onChange=(e)=>{
        setnote({
