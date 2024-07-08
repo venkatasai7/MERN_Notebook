@@ -15,7 +15,7 @@ const Notes = (props) => {
         props.showAlert("updated successfully","success");
      
     }
-    
+
     useEffect(() => {
         if(localStorage.getItem('token'))
          {   
@@ -27,7 +27,7 @@ const Notes = (props) => {
             navigate("/login");
          }
         
-    }, [handleClick]);
+    }, [getallnodes, navigate]);
     const ref = useRef(null)
     const refClose = useRef(null)
     const [note,setnote]=  useState({id:"",etitle:"",edescription:"",etag:""})
