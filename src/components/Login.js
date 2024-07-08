@@ -7,7 +7,7 @@ function Login(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url = `https://mern-notebook.netlify.app/api/auth/login`;
+        const url = `http://localhost:5001/api/auth/login`;
         const response = await fetch(url, {
             method: "POST",
             headers: {

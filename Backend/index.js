@@ -18,5 +18,5 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/notes', require('./routes/notes')); 
 
 app.listen(port, () => {
-  console.log(`Server running at https://mern-notebook.netlify.app/`);
+  console.log(`Server running at http://localhost:${port}/`);
 });

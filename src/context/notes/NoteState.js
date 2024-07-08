@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NoteContext from "./NoteContext";
 
 const NoteState = (props) => {
-const host = "https://mern-notebook.netlify.app/"
+const host = "http://localhost:5001"
   const notesInitial = []
   const [notes, setNotes] = useState(notesInitial)
 
