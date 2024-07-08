@@ -11,7 +11,7 @@ function Signup(props) {
     if((password===cpassword))
     {
       e.preventDefault();
-      const url = `http://localhost:5001/api/auth/createuser`;
+      const url = `https://mern-notebook.netlify.app/api/auth/createuser`;
       //const {name,email,password,cpassword} = credentials;
   
       const response = await fetch(url, {
